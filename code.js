@@ -1,30 +1,35 @@
 function add(num1, num2) {
-	return num1 + num2;
+	let answer = num1 + num2;
+	if (answer.length > 7)
+	{
+		return "ERR"
+	}
+	return answer;
 };
 
 function subtract(num1, num2) {
 	return num1 - num2;
 };
 
-function multiply(array) {
-  answer = 1;
-	for (let i = 0; i < array.length; i++) {
-    answer *= array[i];
-  }
-  return answer
+function multiply(num1, num2) {
+	let answer = num1 * num2;
+	if (answer.length > 7)
+	{
+		return "ERR"
+	}
+	return answer;
 };
 
-function divide(array) {
-  answer = 1;
-	for (let i = 0; i < array.length; i++) {
-    answer /= array[i];
-  }
-  return answer
+function divide(num1, num2) {
+	if (num2 == 0){
+		return "ERR";
+	}
+	return num1 / num2;
 };
 
 function operate(num1, operator, num2){
     return operator == "+" ? add(num1, num2) : operator == "-" ? subtract(num1, num2) :
-    operator == "*" ? multiply([num1, num2]) : divide([num1, num2]);
+    operator == "*" ? multiply(num1, num2) : divide(num1, num2);
 }
 
 function count(string){
