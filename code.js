@@ -47,4 +47,25 @@ function operate(num1, operator, num2){
     operator == "*" ? multiply([num1, num2]) : divide([num1, num2]);
 }
 
-console.log(operate(2, "*", 3));
+function bindButton(value){
+	if (value == "del"){
+		return () => display.textContent = 0;
+	}
+	else {
+		return () => 
+		{
+			if (display.textContent == "0") {
+				display.textContent = value;
+			}
+			else {
+				display.textContent += value;
+			}
+		}
+	}
+
+}
+
+const display = document.querySelector("#monitor")
+const buttons = document.querySelectorAll("button");
+buttons.forEach( (button) => 
+button.addEventListener('click', bindButton(button.textContent)));
