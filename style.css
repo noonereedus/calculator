@@ -16,6 +16,8 @@ body {
     flex: 1 2 auto;
 }
 
+
+  
 #calculator-body {
     flex: 2 1 auto;
     background-color:darkgray;
@@ -25,8 +27,14 @@ body {
     margin-left: 35vw;
     margin-right: 35vw;
     min-width: 30vw;
-    min-height: 70vh;
+    min-height: 70vh;   
 }
+
+@media (max-width: 975px) {
+    #calculator-body {
+      margin: auto;
+    }
+  }
 
 #monitor {
     text-align: right;
